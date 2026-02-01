@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NatAware Consultoría | SST</title>
+
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --card:#121214;
+      --muted:rgba(255,255,255,.78);
+      --line:rgba(255,255,255,.12);
+      --accent:#b90000;
+      --accent2:#ff3b3b;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:#fff;
+      background:
+        radial-gradient(900px 600px at 25% -20%, rgba(185,0,0,.25), transparent 60%),
+        radial-gradient(900px 600px at 85% 0%, rgba(255,59,59,.18), transparent 55%),
+        var(--bg);
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+
+    header{
+      position:sticky; top:0; z-index:20;
+      background: rgba(11,11,12,.80);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand img{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#111}
+    .brand .t1{font-weight:700;letter-spacing:.2px}
+    .brand .t2{font-size:12px;opacity:.75;margin-top:2px}
+
+    .nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:12px;border:1px solid var(--line);
+      text-decoration:none;background: rgba(255,255,255,.04);
+    }
+    .btn:hover{background: rgba(255,255,255,.08)}
+    .btn.primary{background: var(--accent);border-color:var(--accent)}
+    .btn.primary:hover{filter:brightness(1.05)}
+    .btn.ghost{background:transparent}
+
+    section{padding:18px 0}
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:20px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    .kicker{color:var(--accent2);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+    h1{margin:10px 0 10px;font-size:38px;line-height:1.05}
+    .lead{margin:0;color:var(--muted);font-size:16px;max-width:70ch}
+    .heroCtas{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+
+    .grid3{display:grid;grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; margin-top:14px}
+    .card{
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px;
+    }
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+
+    .split{display:grid;grid-template-columns: 1fr 1fr; gap:12px; margin-top:14px}
+
+    /* ---------- Carrusel ---------- */
+    .carouselWrap{
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background:#0f0f10;
+      overflow:hidden;
+      min-height: 320px;
+      position:relative;
+    }
+    .carousel{
+      width:100%;
+      height:100%;
+      position:relative;
+      min-height: 320px;
+    }
+    .slide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transition: opacity 900ms ease;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .slide.active{opacity:1}
+    .slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform: scale(1.02);
+    }
+    .overlay{
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.45));
+      pointer-events:none;
+    }
+    .badge{
+      position:absolute;
+      left:14px;
+      bottom:14px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.30);
+      font-size:13px;
+      color: rgba(255,255,255,.92);
+      backdrop-filter: blur(6px);
+    }
+
+    .cta{
+      margin: 18px 0 30px;
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid rgba(185,0,0,.35);
+      background: linear-gradient(180deg, rgba(185,0,0,.18), rgba(0,0,0,.12));
+    }
+    .cta p{margin:8px 0 0;color:var(--muted)}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:18px 0 28px;
+      color: rgba(255,255,255,.65);
+      font-size:13px;
+    }
+
+    @media (max-width: 900px){
+      h1{font-size:30px}
+      .grid3{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
+      .carouselWrap{min-height: 260px}
+      .carousel{min-height: 260px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/">
+      <img src="/logo-nataware.png" alt="NatAware">
+      <div>
+        <div class="t1">NatAware Consultoría</div>
+        <div class="t2">Seguridad y Salud en el Trabajo (SST)</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a class="btn ghost" href="/">← Inicio</a>
+      <a class="btn" href="#servicios">Servicios</a>
+      <a class="btn" href="#auditorias">Auditorías</a>
+      <a class="btn primary" href="#contacto">Contactar</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO + Carrusel central -->
+  <section>
+    <div class="split">
+      <div class="panel">
+        <div class="kicker">Consultoría SST</div>
+        <h1>Gestión práctica, cumplimiento real y evidencias claras.</h1>
+        <p class="lead">
+          Acompañamiento para empresas que necesitan implementar o mantener su sistema de SST sin complicarse:
+          control documental, capacitación y soporte ante inspecciones.
+        </p>
+
+        <div class="heroCtas">
+          <a class="btn primary" href="#contacto">Solicitar información</a>
+          <a class="btn" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+
+      <div class="carouselWrap" aria-label="Carrusel de imágenes">
+        <div class="carousel" id="carousel">
+          <div class="slide active"><img src="/consultoria/consultoria-1.jpeg" alt="NatAware Consultoría 1"></div>
+          <div class="slide"><img src="/consultoria/consultoria-2.jpeg" alt="NatAware Consultoría 2"></div>
+          <div class="slide"><img src="/consultoria/consultoria-3.jpeg" alt="NatAware Consultoría 3"></div>
+          <div class="slide"><img src="/consultoria/consultoria-4.jpeg" alt="NatAware Consultoría 4"></div>
+          <div class="slide"><img src="/consultoria/consultoria-5.jpeg" alt="NatAware Consultoría 5"></div>
+          <div class="slide"><img src="/consultoria/consultoria-6.jpeg" alt="NatAware Consultoría 6"></div>
+
+          <div class="overlay"></div>
+          <div class="badge">NatAware Consultoría • SST</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="panel">
+      <div class="kicker">Servicios</div>
+      <h2 style="margin:10px 0 0;">¿Qué incluye el acompañamiento?</h2>
+      <p class="lead" style="margin-top:10px;">
+        Lo esencial para mantener el orden, cumplir y tener respaldo ante auditorías.
+        Luego afinamos según el tipo de empresa y actividad.
+      </p>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Documentación y evidencias</h3>
+          <p>Organización de registros, soportes y control documental para auditorías/inspecciones.</p>
+        </div>
+        <div class="card">
+          <h3>Capacitaciones</h3>
+          <p>Charlas claras y aplicables: SST básica, riesgos, procedimientos, acoso y discriminación, etc.</p>
+        </div>
+        <div class="card">
+          <h3>Seguimiento</h3>
+          <p>Plan de acciones y verificación de cumplimiento con prioridades por nivel de riesgo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDITORÍAS -->
+  <section id="auditorias">
+    <div class="panel">
+      <div class="kicker">Auditorías e inspecciones</div>
+      <h2 style="margin:10px 0 0;">Soporte antes, durante y después</h2>
+      <p class="lead" style="margin-top:10px;">
+        Preparación documental, acompañamiento y gestión de hallazgos con un plan de mejora.
+      </p>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Revisión previa</h3>
+          <p>Checklist, orden de documentos, evidencias y puntos críticos a corregir.</p>
+        </div>
+        <div class="card">
+          <h3>Atención de requerimientos</h3>
+          <p>Apoyo para responder solicitudes y presentar información de forma clara.</p>
+        </div>
+        <div class="card">
+          <h3>Plan de acción</h3>
+          <p>Acciones correctivas y seguimiento para cerrar hallazgos con respaldo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="cta" id="contacto">
+    <h2 style="margin:0;">¿Hablamos?</h2>
+    <p>
+      Dime tu ciudad, actividad y número de trabajadores, y te propongo un plan de acompañamiento.
+    </p>
+
+    <div class="ctaRow">
+      <a class="btn primary" href="mailto:contacto@nataware.com">Escribir por correo</a>
+      <!-- Cambia el número cuando quieras -->
+      <a class="btn" href="https://wa.me/593000000000" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" href="/">Volver al inicio</a>
+    </div>
+
+    <p style="margin-top:10px;font-size:13px;opacity:.7">
+      *Puedes ocultar WhatsApp por ahora y dejar solo correo, si prefieres.
+    </p>
+  </section>
+
+  <footer>
+    © <span id="y"></span> NatAware Consultoría.
+  </footer>
+
+</main>
+
+<script>
+  // Año
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  // Carrusel automático
+  (function(){
+    const slides = Array.from(document.querySelectorAll("#carousel .slide"));
+    let i = 0;
+
+    // Tiempo entre imágenes (ms). Cambia si quieres más rápido/lento:
+    const intervalMs = 2800;
+
+    // Precarga básica para evitar “parpadeos”
+    slides.forEach(s => {
+      const img = s.querySelector("img");
+      if(img) { const pre = new Image(); pre.src = img.src; }
+    });
+
+    setInterval(() => {
+      slides[i].classList.remove("active");
+      i = (i + 1) % slides.length;
+      slides[i].classList.add("active");
+    }, intervalMs);
+  })();
+</script>
+
+</body>
+</html>

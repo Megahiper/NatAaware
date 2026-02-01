@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NatAware Shop</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header class="shop-header">
+  <h1>NatAware Shop</h1>
+  <p>Catálogo de prendas disponibles</p>
+</header>
+
+<!-- FILTROS -->
+<section class="filters">
+
+  <select id="categoryFilter">
+    <option value="all">Todas las prendas</option>
+    <option value="camisa">Camisas</option>
+    <option value="camiseta">Camisetas</option>
+    <option value="buso">Busos</option>
+    <option value="pantalon">Pantalones</option>
+    <option value="bermuda">Bermudas</option>
+    <option value="abrigo">Abrigos</option>
+    <option value="zapato">Zapatos</option>
+    <option value="gorra">Gorras</option>
+    <option value="interior">Interiores</option>
+    <option value="niño">Niños</option>
+    <option value="niña">Niñas</option>
+  </select>
+
+  <select id="sizeFilter">
+    <option value="all">Todas las tallas</option>
+  </select>
+
+  <select id="genderFilter">
+    <option value="all">Hombre y Mujer</option>
+    <option value="hombre">Hombre</option>
+    <option value="mujer">Mujer</option>
+  </select>
+
+  <select id="priceFilter">
+    <option value="none">Ordenar por precio</option>
+    <option value="asc">Precio: bajo a alto</option>
+    <option value="desc">Precio: alto a bajo</option>
+  </select>
+
+</section>
+
+<button id="resetFilters" class="reset-btn">
+  Limpiar filtros
+</button>
+
+<!-- CATÁLOGO -->
+<section class="products">
+
+  <!-- PRENDA -->
+  <div class="product" data-category="camisa" data-gender="hombre">
+    <img src="img/camisa-1.jpg">
+    <h3>Camisa con ventilación</h3>
+    <p class="size" data-size="S">Talla: S</p>
+    <p class="price" data-price="50">Precio: $50</p>
+  </div>
+
+    <div class="product" data-category="camisa" data-gender="hombre">
+      <img src="img/camisa-1.jpg">
+      <h3>Camisa con ventilación</h3>
+      <p class="size" data-size="M">Talla: M</p>
+      <p class="price" data-price="50">Precio: $50</p>
+    </div>
+
+    <div class="product" data-category="camisa" data-gender="hombre">
+      <img src="img/camisa-2.jpg">
+      <h3>Camisa con ventilación mangalarga</h3>
+      <p class="size" data-size="XXS">Talla: XXS</p>
+      <p class="price" data-price="50">Precio: $50</p>
+    </div>
+
+    <div class="product" data-category="camisa" data-gender="hombre">
+      <img src="img/camisa-3.jpg">
+      <h3>Camisa con ventilación</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="50">Precio: $50</p>
+    </div>
+
+    <div class="product" data-category="camisa" data-gender="hombre">
+      <img src="img/camisa-4.jpg">
+      <h3>Camisa de vestir</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="40">Precio: $40</p>
+    </div>
+
+    <div class="product" data-category="camisa" data-gender="hombre">
+      <img src="img/camisa-5.jpg">
+      <h3>Camisa con ventilación</h3>
+      <p class="size" data-size="M">Talla: M</p>
+      <p class="price" data-price="50">Precio: $50</p>
+    </div>
+
+    <div class="product" data-category="camisa" data-gender="hombre">
+      <img src="img/camisa-6.jpg">
+      <h3>Camisa mangalarga marca HUK</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="55">Precio: $55</p>
+    </div>
+
+    <div class="product" data-category="camisa" data-gender="hombre">
+      <img src="img/camisa-7.jpg">
+      <h3>Camisa con ventilación</h3>
+      <p class="size" data-size="L">Talla: L/G</p>
+      <p class="price" data-price="50">Precio: $50</p>
+    </div>
+
+    <div class="product" data-category="camisa" data-gender="hombre">
+      <img src="img/camisa-8.jpg">
+      <h3>Camisa con ventilación</h3>
+      <p class="size" data-size="L">Talla: L/G</p>
+      <p class="price" data-price="50">Precio: $50</p>
+    </div>
+
+    <div class="product" data-category="camiseta" data-gender="hombre">
+      <img src="img/camiseta-1.jpg">
+      <h3>Camiseta Polo</h3>
+      <p class="size" data-size="L">Talla: L/G</p>
+      <p class="price" data-price="35">Precio: $35</p>
+    </div>
+
+    <div class="product" data-category="camiseta" data-gender="hombre">
+      <img src="img/camiseta-2.jpg">
+      <h3>Camiseta Polo - Marca POLO</h3>
+      <p class="size" data-size="L">Talla: L</p>
+      <p class="price" data-price="30">Precio: $30</p>
+    </div>
+
+    <div class="product" data-category="camiseta" data-gender="hombre">
+      <img src="img/camiseta-2.jpg">
+      <h3>Camiseta Polo - Marca POLO</h3>
+      <p class="size" data-size="XL">Talla: XL/G</p>
+      <p class="price" data-price="35">Precio: $30</p>
+    </div>
+
+    <div class="product" data-category="camiseta" data-gender="hombre">
+      <img src="img/camiseta-3.jpg">
+      <h3>Camiseta Polo camuflada</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="35">Precio: $35</p>
+    </div>
+
+    <div class="product" data-category="camiseta" data-gender="hombre">
+      <img src="img/camiseta-4.jpg">
+      <h3>Camiseta</h3>
+      <p class="size" data-size="M">Talla: M</p>
+      <p class="price" data-price="25">Precio: $25</p>
+    </div>
+
+    <div class="product" data-category="buso" data-gender="hombre">
+      <img src="img/buso-1.jpg">
+      <h3>Buso contra rayos UV</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="35">Precio: $35</p>
+    </div>
+
+    <div class="product" data-category="buso" data-gender="hombre">
+      <img src="img/buso-2.jpg">
+      <h3>Sueter fresco</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="30">Precio: $30</p>
+    </div>
+
+    <div class="product" data-category="buso" data-gender="hombre">
+      <img src="img/buso-3.jpg">
+      <h3>Buso de algodon</h3>
+      <p class="size" data-size="L">Talla: L</p>
+      <p class="price" data-price="20">Precio: $20</p>
+    </div>
+
+    <div class="product" data-category="abrigo" data-gender="hombre">
+      <img src="img/abrigo-1.jpg">
+      <h3>Abrigo cerrado</h3>
+      <p class="size" data-size="L">Talla: L/G</p>
+      <p class="price" data-price="55">Precio: $55</p>
+    </div>
+
+    <div class="product" data-category="abrigo" data-gender="hombre">
+      <img src="img/abrigo-2.jpg">
+      <h3>Abrigo cerrado</h3>
+      <p class="size" data-size="M">Talla: M</p>
+      <p class="price" data-price="55">Precio: $55</p>
+    </div>
+
+    <div class="product" data-category="abrigo" data-gender="hombre">
+      <img src="img/abrigo-3.jpg">
+      <h3>Abrigo cerrado con capucha</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="55">Precio: $55</p>
+    </div>
+
+    <div class="product" data-category="abrigo" data-gender="hombre">
+      <img src="img/abrigo-4.jpg">
+      <h3>Impermeable</h3>
+      <p class="size" data-size="XL">Talla: XL/G</p>
+      <p class="price" data-price="60">Precio: $60</p>
+    </div>
+
+    <div class="product" data-category="abrigo" data-gender="mujer">
+      <img src="img/abrigo-5.jpg">
+      <h3>Abrigo cerrado (diseño de flores)</h3>
+      <p class="size" data-size="L">Talla: L/G</p>
+      <p class="price" data-price="45">Precio: $45</p>
+    </div>
+
+    <div class="product" data-category="abrigo" data-gender="mujer">
+      <img src="img/abrigo-6.jpg">
+      <h3>Chaqueta</h3>
+      <p class="size" data-size="L">Talla: L/G</p>
+      <p class="price" data-price="55">Precio: $55</p>
+    </div>
+
+    <div class="product" data-category="zapato" data-gender="hombre">
+      <img src="img/zapato-1.jpg">
+      <h3>Zapato estilo mocasine</h3>
+      <p class="size" data-size="7">Talla: 7</p>
+      <p class="price" data-price="65">Precio: $65</p>
+    </div>
+
+    <div class="product" data-category="zapato" data-gender="hombre">
+      <img src="img/zapato-2.jpg">
+      <h3>Zapato estilo mocasine</h3>
+      <p class="size" data-size="8.5">Talla: 8.5</p>
+      <p class="price" data-price="70">Precio: $70</p>
+    </div>
+
+    <div class="product" data-category="gorra" data-gender="hombre">
+      <img src="img/gorra-1.jpg">
+      <h3>Gorra cerrada</h3>
+      <p class="size" data-size="L">Talla: L</p>
+      <p class="price" data-price="30">Precio: $30</p>
+    </div>
+
+    <div class="product" data-category="gorra" data-gender="hombre">
+      <img src="img/gorra-2.jpg">
+      <h3>Gorra ajustable</h3>
+      <p class="size" data-size="Universal">Talla: Universal</p>
+      <p class="price" data-price="30">Precio: $30</p>
+    </div>
+
+    <div class="product" data-category="gorra" data-gender="hombre">
+      <img src="img/gorra-3.jpg">
+      <h3>Gorra con velcro</h3>
+      <p class="size" data-size="Universal">Talla: Universal</p>
+      <p class="price" data-price="25">Precio: $25</p>
+    </div>
+
+    <div class="product" data-category="gorra" data-gender="hombre">
+      <img src="img/gorra-4.jpg">
+      <h3>Gorra ajustable</h3>
+      <p class="size" data-size="Universal">Talla: Universal</p>
+      <p class="price" data-price="25">Precio: $25</p>
+    </div>
+
+    <div class="product" data-category="gorra" data-gender="hombre">
+      <img src="img/gorra-5.jpg">
+      <h3>Gorra con velcro</h3>
+      <p class="size" data-size="Universal">Talla: Universal</p>
+      <p class="price" data-price="25">Precio: $25</p>
+    </div>
+
+    <div class="product" data-category="gorra" data-gender="hombre">
+      <img src="img/gorra-6.jpg">
+      <h3>Sombrero ADIDAS GOLF</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="30">Precio: $30</p>
+    </div>
+
+    <div class="product" data-category="interior" data-gender="mujer">
+      <img src="img/interior-1.jpg">
+      <h3>Calzones (paquete de 5)</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="25">Precio: $25</p>
+    </div>
+
+    <div class="product" data-category="interior" data-gender="hombre">
+      <img src="img/interior-2.jpg">
+      <h3>Boxer alicrado (paquete de 3)</h3>
+      <p class="size" data-size="XL">Talla: XL</p>
+      <p class="price" data-price="25">Precio: $25</p>
+    </div>
+
+    <div class="product" data-category="niño" data-gender="hombre">
+      <img src="img/niño-1.jpg">
+      <h3>Buso elástico</h3>
+      <p class="size" data-size="S">Talla: S</p>
+      <p class="price" data-price="20">Precio: $20</p>
+    </div>
+
+  </section>
+
+</body>
+</html>
